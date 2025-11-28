@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>兒童時間管理</title>
     <style>
+        /* --- 關鍵修正：強制所有元件的內距都包含在寬度內 --- */
+        * {
+            box-sizing: border-box; 
+        }
+
         :root {
             --bg-color: #FFF9C4; /* 柔和的淡黃色背景 */
             --btn-10: #FFAB91;   /* 珊瑚紅 */
@@ -25,7 +30,6 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            box-sizing: border-box;
             text-align: center;
         }
 
@@ -39,7 +43,7 @@
             font-size: 2.2rem; /* 字體統一大小 */
             font-weight: bold;
             color: var(--title-color);
-            line-height: 1.5;  /* 增加行高，讓兩行不要擠在一起 */
+            line-height: 1.5;  /* 增加行高 */
             margin: 0;
         }
 
@@ -47,30 +51,28 @@
         .btn-container {
             display: flex;
             flex-direction: column;
-            gap: 25px; /* 間距稍微縮小 */
+            gap: 25px; /* 按鈕間距 */
             width: 100%;
-            max-width: 420px; /* 容器寬度縮小約 15% (原本500) */
+            max-width: 420px; /* 容器寬度 */
         }
 
-        /* 按鈕樣式 (整體縮小 15%) */
+        /* 按鈕樣式 */
         .big-btn {
-            display: block;
-            width: 100%;
-            padding: 34px 15px; /* padding 縮小 (原本40) */
-            font-size: 2.5rem;  /* 字體縮小 (原本3) */
+            display: flex;            /* 彈性佈局 */
+            align-items: center;      /* 垂直置中 */
+            justify-content: center;  /* 水平置中 */
+            width: 100%;              /* 寬度佔滿容器 */
+            padding: 34px 15px;       /* 內距 */
+            font-size: 2.5rem;        /* 字體大小 */
             font-weight: bold;
-            border-radius: 25px;
-            text-decoration: none;
+            border-radius: 25px;      /* 圓角 */
+            text-decoration: none;    /* 去除底線 */
             color: #fff;
-            box-shadow: 0 8px 0 rgba(0,0,0,0.15);
+            box-shadow: 0 8px 0 rgba(0,0,0,0.15); /* 立體陰影 */
             transition: transform 0.1s, box-shadow 0.1s;
             position: relative;
             top: 0;
-            /* 讓圖示跟文字垂直對齊更好看 */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+            gap: 15px; /* 圖示與文字的距離 */
         }
 
         /* 按鈕按下效果 */
@@ -79,7 +81,7 @@
             box-shadow: 0 0 0 rgba(0,0,0,0.15);
         }
 
-        /* 個別顏色 */
+        /* 個別顏色設定 */
         .btn-10 { background-color: var(--btn-10); text-shadow: 2px 2px 0 #E64A19; }
         .btn-30 { background-color: var(--btn-30); text-shadow: 2px 2px 0 #0288D1; }
         .btn-40 { background-color: var(--btn-40); text-shadow: 2px 2px 0 #388E3C; }
