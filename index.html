@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>一寸光陰一寸金</title>
+    <title>兒童時間管理</title>
     <style>
         :root {
             --bg-color: #FFF9C4; /* 柔和的淡黃色背景 */
@@ -11,64 +11,71 @@
             --btn-30: #81D4FA;   /* 天空藍 */
             --btn-40: #A5D6A7;   /* 草地綠 */
             --text-color: #5D4037;
+            --title-color: #F57F17;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            font-family: "Hannotate TC", "Wawati TC", "BiauKai", cursive, sans-serif; /* 嘗試使用手寫風格字體 */
+            font-family: "Hannotate TC", "Wawati TC", "BiauKai", cursive, sans-serif;
             margin: 0;
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* 垂直置中 */
+            justify-content: center;
             min-height: 100vh;
             box-sizing: border-box;
             text-align: center;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #F57F17;
+        /* 標題區塊 */
+        .title-group {
+            margin-bottom: 40px;
         }
 
-        .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            color: #827717;
+        /* 統一標題樣式 */
+        .main-title {
+            font-size: 2.2rem; /* 字體統一大小 */
             font-weight: bold;
+            color: var(--title-color);
+            line-height: 1.5;  /* 增加行高，讓兩行不要擠在一起 */
+            margin: 0;
         }
 
         /* 按鈕容器 */
         .btn-container {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 25px; /* 間距稍微縮小 */
             width: 100%;
-            max-width: 500px;
+            max-width: 420px; /* 容器寬度縮小約 15% (原本500) */
         }
 
-        /* 超大按鈕樣式 */
+        /* 按鈕樣式 (整體縮小 15%) */
         .big-btn {
             display: block;
             width: 100%;
-            padding: 40px 20px; /* 增加高度 */
-            font-size: 3rem;    /* 超大字體 */
+            padding: 34px 15px; /* padding 縮小 (原本40) */
+            font-size: 2.5rem;  /* 字體縮小 (原本3) */
             font-weight: bold;
-            border-radius: 30px;
+            border-radius: 25px;
             text-decoration: none;
             color: #fff;
-            box-shadow: 0 10px 0 rgba(0,0,0,0.15); /* 立體感陰影 */
+            box-shadow: 0 8px 0 rgba(0,0,0,0.15);
             transition: transform 0.1s, box-shadow 0.1s;
             position: relative;
             top: 0;
+            /* 讓圖示跟文字垂直對齊更好看 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
         }
 
         /* 按鈕按下效果 */
         .big-btn:active {
-            top: 10px;
+            top: 8px;
             box-shadow: 0 0 0 rgba(0,0,0,0.15);
         }
 
@@ -86,21 +93,25 @@
 </head>
 <body>
 
-    <h1>一寸光陰一寸金</h1>
-    <div class="subtitle">三寸光陰一個鑫 💰</div>
+    <div class="title-group">
+        <div class="main-title">一寸光陰一寸金</div>
+        <div class="main-title">三寸光陰一個鑫</div>
+    </div>
 
     <div class="btn-container">
-        <!-- 呼叫原本的 Tea 捷徑，傳入不同分鐘數 -->
+        <!-- 10分鐘：咖啡杯 -->
         <a href="shortcuts://run-shortcut?name=Tea&input=10" class="big-btn btn-10">
-            📚 10 分鐘
+            ☕ 10 分鐘
         </a>
         
+        <!-- 30分鐘：平板 -->
         <a href="shortcuts://run-shortcut?name=Tea&input=30" class="big-btn btn-30">
-            🎮 30 分鐘
+            📱 30 分鐘
         </a>
         
+        <!-- 40分鐘：閉著的眼睛 -->
         <a href="shortcuts://run-shortcut?name=Tea&input=40" class="big-btn btn-40">
-            📺 40 分鐘
+            😌 40 分鐘
         </a>
     </div>
 
