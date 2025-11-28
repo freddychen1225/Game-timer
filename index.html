@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>一寸光陰一寸金</title>
+    <style>
+        :root {
+            --bg-color: #FFF9C4; /* 柔和的淡黃色背景 */
+            --btn-10: #FFAB91;   /* 珊瑚紅 */
+            --btn-30: #81D4FA;   /* 天空藍 */
+            --btn-40: #A5D6A7;   /* 草地綠 */
+            --text-color: #5D4037;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: "Hannotate TC", "Wawati TC", "BiauKai", cursive, sans-serif; /* 嘗試使用手寫風格字體 */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* 垂直置中 */
+            min-height: 100vh;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #F57F17;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: #827717;
+            font-weight: bold;
+        }
+
+        /* 按鈕容器 */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* 超大按鈕樣式 */
+        .big-btn {
+            display: block;
+            width: 100%;
+            padding: 40px 20px; /* 增加高度 */
+            font-size: 3rem;    /* 超大字體 */
+            font-weight: bold;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #fff;
+            box-shadow: 0 10px 0 rgba(0,0,0,0.15); /* 立體感陰影 */
+            transition: transform 0.1s, box-shadow 0.1s;
+            position: relative;
+            top: 0;
+        }
+
+        /* 按鈕按下效果 */
+        .big-btn:active {
+            top: 10px;
+            box-shadow: 0 0 0 rgba(0,0,0,0.15);
+        }
+
+        /* 個別顏色 */
+        .btn-10 { background-color: var(--btn-10); text-shadow: 2px 2px 0 #E64A19; }
+        .btn-30 { background-color: var(--btn-30); text-shadow: 2px 2px 0 #0288D1; }
+        .btn-40 { background-color: var(--btn-40); text-shadow: 2px 2px 0 #388E3C; }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 1rem;
+            color: #8D6E63;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>一寸光陰一寸金</h1>
+    <div class="subtitle">三寸光陰一個鑫 💰</div>
+
+    <div class="btn-container">
+        <!-- 呼叫原本的 Tea 捷徑，傳入不同分鐘數 -->
+        <a href="shortcuts://run-shortcut?name=Tea&input=10" class="big-btn btn-10">
+            📚 10 分鐘
+        </a>
+        
+        <a href="shortcuts://run-shortcut?name=Tea&input=30" class="big-btn btn-30">
+            🎮 30 分鐘
+        </a>
+        
+        <a href="shortcuts://run-shortcut?name=Tea&input=40" class="big-btn btn-40">
+            📺 40 分鐘
+        </a>
+    </div>
+
+    <div class="footer">
+        Freddy & Gemini 3 Pro 兒童時間管理協作
+    </div>
+
+</body>
+</html>
